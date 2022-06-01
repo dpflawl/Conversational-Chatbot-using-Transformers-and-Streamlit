@@ -2,13 +2,12 @@ from matplotlib.pyplot import text
 import streamlit as st
 import torch
 import transformers
-from transformers import BertModel, BertTokenizer
+from transformers import TFGPT2LMHeadModel, GPT2Tokenizer
 
 @st.cache(hash_funcs={transformers.models.gpt2.tokenization_gpt2_fast.GPT2TokenizerFast: hash}, suppress_st_warning=True)
 def load_data():    
- model_name = "monologg/kobert"
- tokenizer = BertTokenizer.from_pretrained(model_name)
- model = BertModel.from_pretrained(model_name)
+ tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+ model = TFGPT2LMHeadModel.from_pretrained('gpt2')
  return tokenizer, model
  
 tokenizer, model = load_data()
