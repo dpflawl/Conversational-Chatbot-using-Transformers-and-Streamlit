@@ -6,7 +6,7 @@ from transformers import AutoTokenizer, AutoModelWithLMHead
 
 
 
-@st.cache(hash_funcs={transformers.models.gpt2.tokenization_gpt2_fast.GPT2TokenizerFast: hash}, suppress_st_warning=False)
+@st.cache
 def load_data():    
  tokenizer = AutoTokenizer.from_pretrained("beomi/kcbert-base")
  model = AutoModelWithLMHead.from_pretrained("beomi/kcbert-base")
