@@ -4,7 +4,7 @@ import torch
 import transformers
 from transformers import BertModel, BertTokenizer
 
-
+@st.cache(hash_funcs={transformers.models.gpt2.tokenization_gpt2_fast.GPT2TokenizerFast: hash}, suppress_st_warning=True)
 def load_data():    
  model_name = "monologg/kobert"
  tokenizer = BertTokenizer.from_pretrained(model_name)
