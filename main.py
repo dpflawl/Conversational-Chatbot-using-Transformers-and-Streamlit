@@ -2,7 +2,7 @@ from matplotlib.pyplot import text
 import streamlit as st
 import torch
 import transformers
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelWithLMHead, AutoTokenizer
 
 
 
