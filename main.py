@@ -4,7 +4,6 @@ import torch
 import transformers
 from transformers import TFGPT2LMHeadModel, GPT2Tokenizer
 
-@st.cache(hash_funcs={transformers.models.gpt2.tokenization_gpt2_fast.GPT2TokenizerFast: hash}, suppress_st_warning=True)
 def load_data():    
  tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
  model = TFGPT2LMHeadModel.from_pretrained('gpt2')
