@@ -6,7 +6,6 @@ from transformers import AutoTokenizer, AutoModelWithLMHead
 
 
 
-@st.cache
 def load_data():    
  tokenizer = AutoTokenizer.from_pretrained("beomi/kcbert-base")
  model = AutoModelWithLMHead.from_pretrained("beomi/kcbert-base")
