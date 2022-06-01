@@ -2,14 +2,14 @@ from matplotlib.pyplot import text
 import streamlit as st
 import torch
 import transformers
-from transformers import AutoModelWithLMHead, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 
 @st.cache(hash_funcs={transformers.models.gpt2.tokenization_gpt2_fast.GPT2TokenizerFast: hash}, suppress_st_warning=True)
 def load_data():    
- tokenizer = AutoTokenizer.from_pretrained("beomi/kcbert-base")
- model = AutoModelWithLMHead.from_pretrained("beomi/kcbert-base")
+ tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+ model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
  return tokenizer, model
  
 tokenizer, model = load_data()
