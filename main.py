@@ -2,11 +2,11 @@ from matplotlib.pyplot import text
 import streamlit as st
 import torch
 import transformers
-from transformers import TFGPT2LMHeadModel, GPT2Tokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 def load_data():    
- tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
- model = TFGPT2LMHeadModel.from_pretrained('gpt2')
+ tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+ model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
  return tokenizer, model
  
 tokenizer, model = load_data()
