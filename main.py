@@ -2,13 +2,13 @@ from matplotlib.pyplot import text
 import streamlit as st
 import torch
 import transformers
-from transformers import AutoTokenizer, AutoModelWithLMHead
-
+from transformers import BertModel, BertTokenizer
 
 
 def load_data():    
- tokenizer = AutoTokenizer.from_pretrained("beomi/kcbert-base")
- model = AutoModelWithLMHead.from_pretrained("beomi/kcbert-base")
+ model_name = "monologg/kobert"
+ tokenizer = BertTokenizer.from_pretrained(model_name)
+ model = BertModel.from_pretrained(model_name)
  return tokenizer, model
  
 tokenizer, model = load_data()
